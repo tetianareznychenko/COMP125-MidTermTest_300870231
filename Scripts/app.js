@@ -10,6 +10,9 @@
 (function () {
 "use strict";
 
+//Landing Paragraphs
+
+//Initialization and Declaration of the variables
 var IntroParagraph = document.getElementById("IntroParagraph");
 var Folegandros = document.getElementById("Folegandros"); 
 var Alonissos = document.getElementById("Alonissos");
@@ -86,6 +89,66 @@ paragraphs[9] = "<br/>Near the more well-known Crete, Gavdos is the most souther
         Gavdos.innerHTML = paragraphs[9];
 
     }
+
+
+//Contant Page Section 
+
+// To check if the sendButton exists
+    if(sendButton) {
+    // Event listener
+        sendButton.addEventListener("click", sendButtonClick);
+    }
+// Event handler function
+    function sendButtonClick(event) {
+        console.log();
+    }   
+// Creation of a reference to the contact form`s fields
+    var firstName = document.getElementById("firstName");
+    var lastName = document.getElementById("lastName");
+    var email = document.getElementById("email");
+    var contactNumber = document.getElementById("contactNumber");
+    var yourMessage = document.getElementById("yourMessage");  
+
+// Creation of a reference to the contact form 
+    var contactForm = document.getElementById("contactForm");
+
+    if(contactForm) {
+    // This is an event listener with inline anonymous event handler function
+        contactForm.addEventListener("submit", function(event){
+            event.preventDefault();
+            showFormInput();
+        });
+    }   
+
+//Creation of the function that makes pretty output 
+
+    /**
+     * This function shows the input from each form field 
+     * on the console
+     * 
+     * @method showFormInput
+     * @return {void} 
+     */
+
+    function showFormInput() {
+        console.log("********************************");
+        console.log("First Name: " + firstName.value);
+        console.log("********************************");
+
+        console.log("Last Name: " + lastName.value);
+        console.log("********************************");
+        
+        console.log("Contact Number: " + contactNumber.value);
+        console.log("********************************");  
+
+        console.log("Email: " + email.value);
+        console.log("********************************");
+ 
+        console.log("Message: " + yourMessage.value);
+        console.log("********************************");               
+
+    }
+     
 
 })();
 
